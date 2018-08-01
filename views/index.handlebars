@@ -1,0 +1,33 @@
+<section class="py-2">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h1 class="display-4 mt-3 pt-5">
+                Stripe Payment Gateway Integration.
+            </h1>
+            <p class="lead">this is cool</p>
+
+            <form action="/charge" method="POST">
+                <script src="https://checkout.stripe.com/checkout.js"
+                        class="stripe-button" data-key={{stripePublishableKey}}
+                        data-amount= document.getElementById('donate').value;
+                        data-name="harry potter" 
+                        data-description="ebook written by jk rowling" 
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-locale="auto">
+                </script>
+                <script>
+                    //hide the default stripe button
+                    document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                </script>
+                <div class="form-group">
+                    <label for="usr">Donate</label>
+                    <input type="text" class="form-control" id="donate" name="donate">
+                </div>
+                <button type="submit" class="btn btn-outline-danger btn-lg btn-block text-white bg-warning">pay</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="/img/book.jpg" class="img-fluid" alt="">
+        </div>
+    </div>
+</section>
